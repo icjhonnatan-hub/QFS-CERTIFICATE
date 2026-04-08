@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Verificación de Certificado</title>
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        background: #f5f5f5;
+    }
+    input, button {
+        padding: 10px;
+        margin: 10px;
+    }
+    table {
+        margin: auto;
+        margin-top: 30px;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+    }
+    th {
+        background: #eee;
+    }
+</style>
+</head>
+<body>
+
+<h2>Get Certificate Details Here</h2>
+
+<input type="text" id="codigo" placeholder="Ingresa código">
+<button onclick="buscar()">Get Details</button>
+
+<div id="resultado"></div>
+
+<script>
+function buscar() {
+    let codigo = document.getElementById("codigo").value;
+
+    if (codigo === "SCC/INT/2506EO/13173") {
+        document.getElementById("resultado").innerHTML = `
+        <table>
+            <tr>
+                <th>Certificate Number</th>
+                <th>Name of Client</th>
+                <th>Date of Issue</th>
+                <th>Date of Expiry</th>
+                <th>Standard</th>
+                <th>Place</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>SCC/INT/2506EO/13173</td>
+                <td>E & S CONSTRUCTORA SALAS S.A.C</td>
+                <td>27.06.2025</td>
+                <td>26.06.2026</td>
+                <td>37001:2025</td>
+                <td>PERÚ</td>
+                <td>ACTIVE</td>
+            </tr>
+        </table>
+        `;
+    } else {
+        document.getElementById("resultado").innerHTML = "<p style='color:red;'>Código no encontrado</p>";
+    }
+}
+</script>
+
+</body>
+</html>
